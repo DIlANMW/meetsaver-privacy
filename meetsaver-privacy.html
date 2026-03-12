@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeetSaver — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #080810;
+      --bg2:     #0e0e1a;
+      --bg3:     #14141f;
+      --border:  #1e1e30;
+      --border2: #2a2a40;
+      --accent:  #6c63ff;
+      --accent2: #8b85ff;
+      --green:   #00e5a0;
+      --text:    #f4f4ff;
+      --text2:   #8888bb;
+      --text3:   #44445a;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb {
+      position: fixed; border-radius: 50%;
+      filter: blur(120px); pointer-events: none; z-index: 0;
+    }
+    .orb-1 { width: 500px; height: 500px; top: -150px; left: -150px; background: rgba(108,99,255,0.10); }
+    .orb-2 { width: 400px; height: 400px; bottom: -100px; right: -100px; background: rgba(0,229,160,0.06); }
+
+    .wrap {
+      position: relative; z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo-mark {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #6c63ff, #8b85ff);
+      border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 17px; color: #fff;
+      box-shadow: 0 0 20px rgba(108,99,255,0.35);
+      flex-shrink: 0;
+    }
+    .logo-text { font-size: 20px; font-weight: 700; }
+    .logo-text span { color: var(--accent2); }
+    .header-right { margin-left: auto; font-size: 12px; color: var(--text2); }
+
+    /* HERO */
+    .hero { margin-bottom: 48px; }
+    .hero h1 {
+      font-size: 36px; font-weight: 800;
+      letter-spacing: -1px; line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--accent2), var(--green));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p { font-size: 16px; color: var(--text2); max-width: 560px; }
+
+    /* SUMMARY BADGES */
+    .badges {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 48px;
+    }
+    .badge {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--bg2); border: 1px solid var(--border2);
+      border-radius: 30px; padding: 7px 16px;
+      font-size: 13px; font-weight: 600; color: var(--text2);
+    }
+    .badge.green { color: var(--green); background: rgba(0,229,160,0.06); border-color: rgba(0,229,160,0.2); }
+
+    /* SECTIONS */
+    .section {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 28px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .section::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+    .section h2 {
+      font-size: 17px; font-weight: 700;
+      margin-bottom: 14px; color: var(--text);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section h2 .icon {
+      width: 32px; height: 32px;
+      background: var(--bg3); border: 1px solid var(--border2);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
+    }
+    .section p { font-size: 14px; color: var(--text2); margin-bottom: 10px; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul { padding-left: 0; list-style: none; }
+    .section ul li {
+      font-size: 14px; color: var(--text2);
+      padding: 5px 0 5px 20px;
+      position: relative;
+    }
+    .section ul li::before {
+      content: '✓';
+      position: absolute; left: 0;
+      color: var(--green); font-weight: 700; font-size: 12px;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight {
+      background: rgba(0,229,160,0.06);
+      border: 1px solid rgba(0,229,160,0.18);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .contact p { font-size: 13px; color: var(--text2); margin-bottom: 6px; }
+    .contact a { color: var(--accent2); text-decoration: none; font-weight: 600; }
+    .contact a:hover { text-decoration: underline; }
+
+    .updated {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text3);
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="wrap">
+
+    <header class="header">
+      <div class="logo-text">Meet<span>Saver</span></div>
+      <div class="header-right">Chrome Extension</div>
+    </header>
+
+    <div class="hero">
+      <h1>Privacy <span>Policy</span></h1>
+      <p>We built MeetSaver with privacy as a core principle. Your meeting data belongs to you — it never leaves your device.</p>
+    </div>
+
+    <div class="badges">
+      <div class="badge green">🔒 No servers</div>
+      <div class="badge green">✓ No tracking</div>
+      <div class="badge green">✓ No account required</div>
+      <div class="badge green">✓ 100% local storage</div>
+      <div class="badge">Last updated: March 2026</div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">📋</span> What Data We Collect</h2>
+      <p>MeetSaver captures the following data solely to provide its core functionality:</p>
+      <ul>
+        <li>Chat messages from Google Meet and Zoom Web meetings you attend</li>
+        <li>Meeting titles and participant names as they appear in chat</li>
+        <li>Timestamps of messages</li>
+        <li>URLs shared in meeting chats</li>
+      </ul>
+      <div class="highlight">🔒 All of this data is stored locally in your browser using Chrome's storage API. Nothing is transmitted to any server.</div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🚫</span> What We Do NOT Collect</h2>
+      <ul>
+        <li>Your name, email address, or any personal identification</li>
+        <li>Your location or IP address</li>
+        <li>Your browsing history or activity outside of meeting pages</li>
+        <li>Audio, video, or screen content from meetings</li>
+        <li>Any financial or health information</li>
+        <li>Passwords or authentication credentials</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">💾</span> How Data Is Stored</h2>
+      <p>All meeting chat data is stored exclusively on your local device using the Chrome <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:12px;">chrome.storage.local</code> API.</p>
+      <p>Data is never uploaded, synced, or shared with any external server, database, or third party. MeetSaver has no backend — there is no server to send data to.</p>
+      <p>You can delete all stored data at any time by removing the extension or using the "Clear All" button inside the extension.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🤝</span> Data Sharing</h2>
+      <p>We do not sell, share, trade, or transfer any user data to any third party under any circumstances.</p>
+      <p>MeetSaver does not use any third-party analytics, advertising networks, or tracking services.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🔑</span> Permissions Explained</h2>
+      <ul>
+        <li><strong style="color:var(--text)">storage</strong> — Saves your meeting chats locally on your device</li>
+        <li><strong style="color:var(--text)">tabs</strong> — Detects when a Google Meet or Zoom meeting tab opens or closes</li>
+        <li><strong style="color:var(--text)">activeTab</strong> — Reads the current tab URL to identify the meeting platform</li>
+        <li><strong style="color:var(--text)">notifications</strong> — Shows a local notification when a meeting is saved</li>
+        <li><strong style="color:var(--text)">meet.google.com</strong> — Injects a script to capture chat messages on Google Meet</li>
+        <li><strong style="color:var(--text)">app.zoom.us</strong> — Injects a script to capture chat messages on Zoom Web</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">👤</span> Your Rights</h2>
+      <p>Since all data is stored locally on your device, you have full control at all times:</p>
+      <ul>
+        <li>Delete individual meetings from within the extension</li>
+        <li>Clear all saved data using the "Clear All" option</li>
+        <li>Uninstall the extension to remove all stored data permanently</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">🔄</span> Changes to This Policy</h2>
+      <p>If we make any changes to this privacy policy, we will update the date at the top of this page. Continued use of MeetSaver after changes means you accept the updated policy.</p>
+      <p>We will never change this policy in a way that allows user data to be collected or shared without clearly notifying users first.</p>
+    </div>
+
+    <div class="contact">
+      <p>Questions about this privacy policy?</p>
+      <p>Contact us at <a href="mailto:dilanweerasinghe97@gmail.com">privacy@meetsaver.app</a></p>
+    </div>
+
+    <p class="updated">Effective date: March 12, 2026 · MeetSaver Chrome Extension</p>
+
+  </div>
+</body>
+</html>
